@@ -20,7 +20,7 @@
 
         // Thay đổi URL ngay khi trang được tải
         const initialUrl = `https://yourdomain.com/initial-page`;
-        history.replaceState(null, null, initialUrl); // Cập nhật thanh địa chỉ ngay từ lúc tải trang
+        history.pushState(null, null, initialUrl); // Cập nhật thanh địa chỉ ngay từ lúc tải trang
 
         document.getElementById("startScan").addEventListener("click", async () => {
             try {
