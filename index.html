@@ -18,6 +18,10 @@
         const videoElement = document.getElementById("video");
         const resultElement = document.getElementById("result");
 
+        // Thay đổi URL ngay khi trang được tải
+        const initialUrl = `https://yourdomain.com/initial-page`;
+        history.replaceState(null, null, initialUrl); // Cập nhật thanh địa chỉ ngay từ lúc tải trang
+
         document.getElementById("startScan").addEventListener("click", async () => {
             try {
                 const constraints = {
@@ -40,7 +44,7 @@
                         // Hiển thị kết quả quét
                         resultElement.textContent = result.text;
 
-                        // Thay đổi URL trên thanh trình duyệt
+                        // Thay đổi URL trên thanh trình duyệt khi quét QR
                         const newUrl = `https://yourdomain.com/result/${result.text}`;
                         history.pushState(null, null, newUrl);  // Cập nhật thanh địa chỉ
 
